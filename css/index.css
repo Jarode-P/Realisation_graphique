@@ -78,6 +78,57 @@ body {
     position: relative;
     padding-bottom: 120px; /* Espace pour le footer */
 }
+.navbar{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--bg-secondary);
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow-md);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+.logo {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-links li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+.nav-links li a:hover {
+    color: var(--primary-color);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+section {
+    padding: var(--section-padding);
+}
+.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+#accueil h1, #projets h2, #competences h2, #contact h2 {
+    font-size: var(--font-size-4xl);
+    margin-bottom: 1rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
     margin-bottom: 1rem;

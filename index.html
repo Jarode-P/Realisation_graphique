@@ -9,14 +9,29 @@
     <title> Réalisation Graphique</title>
 </head>
 <body>
+    <!--Navbar + logo -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <!--Bannière principal avec titre -->
-        <section class="hero">
+        <section class="hero" id="accueil">
             <h1>Réalisation Graphique</h1>
         </section>
 
         <!--Carte de réalisation graphique main content-->
-        <section>
+        <section id="projets">
+            <h2>Mes Projets</h2>
             <!--Barre de scroll horizontal-->
             <div class="scrollbar">
                 <section class="cards">
@@ -43,14 +58,45 @@
                 </section>
             </div>
         </section>
+
+        <!-- Section Compétences -->
+        <section id="competences">
+            <h2>Mes Compétences</h2>
+            <div class="competences-content">
+                <div class="competence">
+                    <h3>Design Graphique</h3>
+                    <p>Maîtrise des logiciels de création graphique (Photoshop, Illustrator, InDesign).</p>
+                </div>
+                <div class="competence">
+                    <h3>Identité Visuelle</h3>
+                    <p>Création de logos, chartes graphiques et supports de communication.</p>
+                </div>
+                <div class="competence">
+                    <h3>Print & Digital</h3>
+                    <p>Conception pour l'impression et les supports numériques.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact">
+            <h2>Contactez-moi</h2>
+            <div class="contact-content">
+                <p>Vous avez un projet ? N'hésitez pas à me contacter !</p>
+                <div class="contact-info">
+                    <p>Email : <a href="mailto:pottinjarode@gmail.com">pottinjarode@gmail.com</a></p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/jarode-pottin-4b4b9823b/" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/Jarode-P" target="_blank">GitHub</a>
+                        <a href="https://jarodep.fr" target="_blank">Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2023 Jarode Pottin. Tous droits réservés.</p>
-        <a href="mailto:pottinjarode@gmail.com">Contactez-moi</a>
-        <a href="https://www.linkedin.com/in/jarode-pottin-4b4b9823b/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Jarode-P" target="_blank">GitHub</a>
-        <a href="https://jarodep.fr" target="_blank">Portfolio</a>
     </footer>
 </body>
 </html>
