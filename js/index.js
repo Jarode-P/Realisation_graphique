@@ -46,19 +46,24 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(`✅ ${cardCount} cartes originales dupliquées pour l'effet infini`);
     }
     
-    // REFACTORED: Slider infini toujours vers l'avant basé sur translateX
-    // On garde l'ancienne logique plus bas si besoin de rollback, mais on ajoute une nouvelle implémentation plus fiable
-    
-    // ===================== SLIDER INFINI (version contrôlée) =====================
-    // Refactor précédent conservé. Ci‑dessous : version sans interaction utilisateur.
+    // Initialiser le carousel
     (function() {
         const wrapper = document.querySelector('.scrollbar');
         const track = document.querySelector('.cards');
         if(!wrapper || !track) return;
     
-        // Empêcher tout scroll natif dans la zone du slider
+        // Empêcher uniquement le scroll horizontal du slider
         wrapper.style.overflow = 'hidden';
-        wrapper.addEventListener('wheel', e => { e.preventDefault(); }, { passive:false });
+        
+        // Permettre le scroll vertical naturel en ne bloquant que le scroll horizontal
+        wrapper.addEventListener('wheel', (e) => {
+            // Si c'est un scroll principalement horizontal, l'empêcher
+            if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+                e.preventDefault();
+            }
+            // Laisser passer le scroll vertical naturellement
+        }, { passive: false });
+        
         wrapper.addEventListener('touchmove', e => { e.preventDefault(); }, { passive:false });
     
         // Désactiver la sélection / drag
@@ -117,20 +122,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if(keysToBlock.includes(e.code)) e.preventDefault();
         });
     
-        // Option : empêcher scroll page quand souris sur le slider (vertical aussi)
-        const blockWheel = e => { e.preventDefault(); };
-        wrapper.addEventListener('mouseenter', () => {
-            window.addEventListener('wheel', blockWheel, { passive:false });
-        });
-        wrapper.addEventListener('mouseleave', () => {
-            window.removeEventListener('wheel', blockWheel, { passive:false });
-        });
-    
         // Retirer les anciens écouteurs potentiels (défensif) si le code précédent est encore chargé
         // Impossible d'enlever précisément sans références; on neutralise via pointer-events
         track.style.pointerEvents = 'none';
     })();
-    // ================== FIN SLIDER INFINI SANS INTERACTION ==================
     
     // Nettoyage à la fermeture
     window.addEventListener('beforeunload', () => {
