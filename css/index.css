@@ -78,17 +78,6 @@ body {
     position: relative;
     padding-bottom: 120px; /* Espace pour le footer */
 }
-.navbar{
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: var(--bg-secondary);
-    padding: 1rem 2rem;
-    box-shadow: var(--shadow-md);
-    z-index: 100;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-}
 .navbar {
     position: sticky;
     top: 0;
@@ -168,9 +157,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 2rem;
     position: relative;
     overflow: hidden;
-    /* Propriétés pour un scroll fluide */
-    will-change: auto;
-    transform: translateZ(0);
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -347,12 +333,10 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1.5rem;
     padding: 2rem;
     min-width: max-content;
-    /* Empêche le wrap pour permettre le défilement horizontal */
     flex-wrap: nowrap;
     /* Optimisations pour la fluidité */
     will-change: transform;
     backface-visibility: hidden;
-    transform: translateZ(0);
 }
 
 .card {
@@ -362,7 +346,6 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: var(--shadow-md);
     padding: 1rem;
     transition: transform var(--transition-medium), box-shadow var(--transition-medium);
-    animation: light 0.3s ease-out;
     width: 350px;
     flex-shrink: 0;
     display: flex;
